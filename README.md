@@ -20,39 +20,100 @@ To write a program to perform linear search and binary search using python progr
 i)	#Use a linear search method to match the item in a list.
 ```
 ''' 
-Program to mark the maximum of marks using the list method sort
-Developed by: HARISH RAGAVENDRA S
-RegisterNumber: 22008967
+Program for linear search method to match the item in a list
+Developed by:
+RegisterNumber: 
 '''
-def max_marks(marks):
-    marks.sort()
-    large=marks[-1]
-    return large    
+def linearSearch(array,n,k):
+    for i in range(0,n):
+        if(array[i]==k):
+            return i
+    return -1
+array = eval(input())
+k=eval(input())
+n=len(array)
+array.sort()
+    # k-item to be seared for
+# get the length of array and store in the variable n
+result= linearSearch(array,n,k)
+# use if-else to print sorted array and "Element not found" if the item is not present in the list otherwise print sorted array and "Element found at index: ", result
+if(result==-1):
+    print(array)
+    print("Element not found")
+else:
+    print(array)
+    print("Element found at index: ",result)
+
 ```
 ii)	# Find the element in a list using Binary Search(Iterative Method).
 ```
 ''' 
-Program to find the maximum marks using the list method max().
+Program to find the element in a list using Binary Search(Iterative Method)..
 Developed by: HARISH RAGAVENDRA S
 RegisterNumber: 22008967
 '''
-def max_marks(marks):
-    marks.sort()
-    large=marks[-1]
-    return large    
+def BinarySearch(arr, k, low, high):
+    # Write your code here to find the middle value and check if the desired item is above or below the middle value
+    if high>=low:
+        mid=low+(high-low)//2
+        if arr[mid]==k:
+            return mid
+        elif arr[mid]>k:
+            return BinarySearch(arr,k,low,mid-1)
+        else:
+            return BinarySearch(arr,k,mid+1,high)
+    else:
+        return -1
+arr = eval(input())
+arr.sort()
+k = eval(input())
+#k-item to be searched
+result=BinarySearch(arr,k,0,len(arr)-1)
+if(result== -1):
+    print(arr)
+    print("Element not found")
+else:
+    print(arr)
+    print("Element found at index: ", result)
+
+# use the binary search function to find the item in the list
+
+# use if-else to print sorted array and "Element not found" if the item is not present in the list otherwise print sorted array and "Element found at index: ", result    
 ```
 iii)	# Find the element in a list using Binary Search (recursive Method).
 ```
 ''' 
-Program to the maximum marks without using builtin functions.
-Developed by: HARISH RAGAVENRA S
+Program to find the element in a list using Binary Search(Iterative Method)..
+Developed by: HARISH RAGAVENDRA S
 RegisterNumber: 22008967
 '''
-def max_marks(list1):
-    list1.sort()
-    large=list1[-1]
-    return large    
+def BinarySearch(arr, k, low, high):
+    # Write your code here to find the middle value and check if the desired item is above or below the middle value
+    if high>=low:
+        mid=low+(high-low)//2
+        if arr[mid]==k:
+            return mid
+        elif arr[mid]>k:
+            return BinarySearch(arr,k,low,mid-1)
+        else:
+            return BinarySearch(arr,k,mid+1,high)
+    else:
+        return -1
+arr = eval(input())
+arr.sort()
+k = eval(input())
+#k-item to be searched
+result=BinarySearch(arr,k,0,len(arr)-1)
+if(result== -1):
+    print(arr)
+    print("Element not found")
+else:
+    print(arr)
+    print("Element found at index: ", result)
 
+# use the binary search function to find the item in the list
+
+# use if-else to print sorted array and "Element not found" if the item is not present in the list otherwise print sorted array and "Element found at index: ", result
 ```
 ## Sample Input and Output
 ![output!](output1.png)
